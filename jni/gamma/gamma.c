@@ -21,6 +21,7 @@ Java_de_shandschuh_sparserss_Gamma_changeGammaArray(JNIEnv *env,
     unsigned char r, g, b, a; 
     uint32_t c;
 
+    /* ARGB_8888 */
     for(i=0; i<len; i++) {
         b = body[i] & 0xff;
         g = (body[i] >> 8) & 0xff;
@@ -108,6 +109,8 @@ Java_de_shandschuh_sparserss_Gamma_changeGamma(JNIEnv *env,
     uint16_t color;
     __android_log_print(ANDROID_LOG_DEBUG, LOG_GAMMA_TAG, "length: %d\n",
             length);
+
+    /* RGB565 */
 
     for (i=0; i<length; i++) {
         if (pixels[i] == 65535) {
